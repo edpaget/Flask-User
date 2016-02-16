@@ -416,7 +416,7 @@ def register():
             else:
                 user.user_auth = user_auth
 
-        require_email_confirmation = True
+        require_email_confirmation = not user_manager.enable_login_without_confirm_email
         if user_invite:
             if user_invite.email == register_form.email.data:
                 require_email_confirmation = False
